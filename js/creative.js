@@ -56,3 +56,28 @@
   });
 
 })(jQuery); // End of use strict
+
+function filterGallery(option) {
+  // get all elements with class portfolio-box-container
+  var portfolioBoxContainers = document.getElementsByClassName("portfolio-box-container");
+  console.log("portfolioBoxContainers = " + portfolioBoxContainers);
+  // for each portfolio-box-container element...
+  // portfolioBoxContainers.forEach(function(element) {
+  // portfolioBoxContainers.forEach.call(parent.children, child => {
+  Array.prototype.forEach.call(portfolioBoxContainers, function(element) {
+      // Do stuff here
+      // console.log(el.tagName);
+  // });
+
+    console.log("element = " + element);
+    // if option is 'all' or option selected is one of the classes, then remove the class 'hidden'
+    if (option === 'all' || $(element).hasClass(option)) {
+      console.log("option === 'all' || element.hasClass(option)");
+      $(element).removeClass("hidden");
+    // else add the class 'hidden'
+    } else {
+      console.log("!(option === 'all' || element.hasClass(option))");
+      $(element).addClass("hidden");
+    }
+  });
+}
