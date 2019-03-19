@@ -57,18 +57,12 @@
 
 })(jQuery); // End of use strict
 
-function filterGallery(option) {
+function filterGallery(option, index) {
   // get all elements with class portfolio-box-container
   var portfolioBoxContainers = document.getElementsByClassName("portfolio-box-container");
   console.log("portfolioBoxContainers = " + portfolioBoxContainers);
   // for each portfolio-box-container element...
-  // portfolioBoxContainers.forEach(function(element) {
-  // portfolioBoxContainers.forEach.call(parent.children, child => {
   Array.prototype.forEach.call(portfolioBoxContainers, function(element) {
-      // Do stuff here
-      // console.log(el.tagName);
-  // });
-
     console.log("element = " + element);
     // if option is 'all' or option selected is one of the classes, then remove the class 'hidden'
     if (option === 'all' || $(element).hasClass(option)) {
@@ -79,5 +73,26 @@ function filterGallery(option) {
       console.log("!(option === 'all' || element.hasClass(option))");
       $(element).addClass("hidden");
     }
+  });
+
+  // get all elements with class portfolio-box-container
+  var navItems = $('.sub-navbar').find('.nav-item');
+  console.log("navItems = " + navItems);
+  var currentIndex = 0;
+  // for each portfolio-box-container element...
+  Array.prototype.forEach.call(navItems, function(element) {
+    console.log("element = " + element);
+    console.log("currentIndex = " + currentIndex);
+    // if index selected is the current index, then add the class 'active'
+    if (index === currentIndex) {
+      console.log("index === currentIndex");
+      $(element).addClass("active");
+    // else remove the class 'active'
+    } else {
+      console.log("index !== currentIndex");
+      $(element).removeClass("active");
+    }
+    // add 1 to the currentIndex
+    currentIndex++;
   });
 }

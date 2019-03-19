@@ -4877,6 +4877,16 @@ input[type="button"].btn-block {
   flex: 0 1 auto;
   align-self: auto;
   list-style-type: none;
+  cursor: pointer;
+  color: #5c8893;
+}
+
+.sub-navbar .nav-item:hover {
+  opacity: 0.5;
+}
+
+.sub-navbar .nav-item.active {
+  border-bottom: 1px solid #5c8893;
 }
 
 
