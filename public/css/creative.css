@@ -490,6 +490,7 @@ mark,
 .img-fluid {
   max-width: 100%;
   height: auto;
+  border: 2px solid #5c8893;
 }
 
 .img-thumbnail {
@@ -10748,6 +10749,19 @@ header.masthead h1 {
 
 #portfolio .container-fluid {
   max-width: 1920px;
+  /* max-width: 80%; */
+}
+
+#portfolio .row {
+  justify-content: center;
+}
+
+
+@media (min-width: 641px) {
+  #portfolio .container-fluid {
+    /* max-width: 1920px; */
+    max-width: 80%;
+  }
 }
 
 #portfolio .container-fluid .portfolio-box {
@@ -10828,8 +10842,26 @@ header.masthead h1 {
   height: 100px;
   overflow: hidden;
   margin: 1%;
-  flex: 0 0 14.66%;
-  max-width: 31.33%;
+  width: 100px;
+
+  flex: 0 0 23%;  /* 4 per row =((100-1*2*4)/4) */
+  max-width: 23%;
+  width: 100px;
+  /* flex: 0 0 10.5%;
+  max-width: 10.5%; */
+}
+
+
+@media (min-width: 641px) {
+  .portfolio-box-container {
+    flex: 0 0 8%; /* 10 per row =((100-1*2*10)/10) */
+    /* max-width: 8%; */
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
+    /* flex: 0 0 10.5%;
+    max-width: 10.5%; */
+  }
 }
 
 .portfolio-box {
