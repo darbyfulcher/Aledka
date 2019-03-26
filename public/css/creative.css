@@ -10825,10 +10825,10 @@ header.masthead h1 {
 }
 
 .portfolio-box-container {
-  height: 310px;
+  height: 100px;
   overflow: hidden;
   margin: 1%;
-  flex: 0 0 31.33%;
+  flex: 0 0 14.66%;
   max-width: 31.33%;
 }
 
