@@ -10637,7 +10637,7 @@ hr.light {
 #mainNav .navbar-brand {
   font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
-  font-size: 20px;
+  font-size: 30px;
   /* color: #212529; */
   color: #5c8893;
   opacity: 1;
@@ -10820,12 +10820,13 @@ header.masthead h1 {
 }
 
 .main-box-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-content: stretch;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: flex-start;
+  margin-bottom: 30px;
 }
 
 .main-box-container img {
@@ -10836,6 +10837,7 @@ header.masthead h1 {
   order: 0;
   flex: 0 1 auto;
   align-self: auto;
+  /* border-radius: 5px; */
 }
 
 .portfolio-box-container {
