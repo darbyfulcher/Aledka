@@ -10835,9 +10835,9 @@ header.masthead h1 {
 .portfolio-box {
   position: relative;
   display: block;
-  max-width: 650px;
+  max-width: 100px;
   margin: 0 auto;
-  height: 100%;
+  height: 100px;
 }
 
 .hidden {
