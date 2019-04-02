@@ -51,6 +51,7 @@
       preload: [0, 1]
     },
     image: {
+      titleSrc: 'title',  // this tells the script which attribute has your caption
       tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
     }
   });
