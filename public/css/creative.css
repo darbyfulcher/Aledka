@@ -10635,8 +10635,8 @@ hr.light {
 }
 
 #mainNav {
-  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  /* -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); */
+  /* box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); */
   background-color: #fff;
   -webkit-transition: background-color 0.2s ease;
   transition: background-color 0.2s ease;
@@ -10673,11 +10673,10 @@ hr.light {
 }
 
 @media (min-width: 992px) {
-  #mainNav {
+  /* #mainNav {
     -webkit-box-shadow: none;
     box-shadow: none;
-    /* background-color: transparent; */
-  }
+  } */
   /* #mainNav .navbar-brand {
     color: rgba(255, 255, 255, 0.7);
   }
@@ -10714,6 +10713,10 @@ hr.light {
   #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
     color: #5c8893;
   }
+}
+
+header.masthead {
+  padding-top: 139px;
 }
 
 /* header.masthead {
