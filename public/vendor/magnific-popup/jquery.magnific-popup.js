@@ -774,6 +774,8 @@ MagnificPopup.prototype = {
 			if(value === undefined || value === false) {
 				return true;
 			}
+      console.log("key = (below)");
+      console.log(key);
 			arr = key.split('_');
 			if(arr.length > 1) {
 				var el = template.find(EVENT_NS + '-'+arr[0]);

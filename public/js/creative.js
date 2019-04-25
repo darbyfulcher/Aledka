@@ -1,6 +1,8 @@
 (function($) {
   "use strict"; // Start of use strict
 
+  filterGallery('24x24', 0)
+
   // Smooth scrolling using jQuery easing
   $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -41,56 +43,118 @@
 
   // Magnific popup calls
   $('#portfolio').magnificPopup({
-    delegate: 'a',
+    // items: [
+    //   {
+    //     src: 'http://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Peter_%26_Paul_fortress_in_SPB_03.jpg/800px-Peter_%26_Paul_fortress_in_SPB_03.jpg',
+    //     title: 'Peter & Paul fortress in SPB'
+    //   },
+    //   {
+    //     src: 'https://vimeo.com/123123',
+    //     type: 'iframe' // this overrides default type
+    //   },
+    //   {
+    //     src: $('<div class="white-popup">Dynamically created element</div>'), // Dynamically created element
+    //     type: 'inline'
+    //   },
+    //   {
+    //     src: '<div class="white-popup">Popup from HTML string</div>', // HTML string
+    //     type: 'inline'
+    //   },
+    //   {
+    //     src: '#my-popup', // CSS selector of an element on page that should be used as a popup
+    //     type: 'inline'
+    //   }
+    // ]
+    // delegate: 'a',
     type: 'image',
     tLoading: 'Loading image #%curr%...',
-    mainClass: 'mfp-img-mobile',
+    // mainClass: 'mfp-img-mobile',
     gallery: {
       enabled: true,
       navigateByImgClick: true,
       preload: [0, 1]
     },
-    image: {
-      titleSrc: 'title',  // this tells the script which attribute has your caption
-      tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-    }
+    // items:[{
+    //     src: 'img/portfolio/fullsize/24x24/Reflections2201824X24.jpg'
+    // }],
+    items: imageArray
+    // image: {
+    //   titleSrc: 'title',  // this tells the script which attribute has your caption
+    //   tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+    // }
   });
 
 })(jQuery); // End of use strict
 
+var imageArray = []
+
 function filterGallery(option, index) {
+  // reset the imageArray
+  imageArray = []
   // get all elements with class portfolio-box-container
   var portfolioBoxContainers = document.getElementsByClassName("portfolio-box-container");
-  console.log("portfolioBoxContainers = " + portfolioBoxContainers);
+  // console.log("portfolioBoxContainers = " + portfolioBoxContainers);
   // for each portfolio-box-container element...
   Array.prototype.forEach.call(portfolioBoxContainers, function(element) {
-    console.log("element = " + element);
+    // console.log("element = (below)");
+    // console.log(element);
     // if option is 'all' or option selected is one of the classes, then remove the class 'hidden'
     if (option === 'all' || $(element).hasClass(option)) {
-      console.log("option === 'all' || element.hasClass(option)");
+      // console.log("option === 'all' || element.hasClass(option)");
       $(element).removeClass("hidden");
+
+      // // get the image url
+      // console.log("$(element).children('a img') = (below)");
+      // console.log($(element).children('img'));
+      // console.log("$(element).children('a').children('img') = (below)");
+      // console.log($(element).children('a').children('img'));
+      const imageURL = $(element).children('a').children('img').attr('src')
+      // console.log("imageURL = (below)");
+      // console.log(imageURL);
+
+      // add the image url to the imageArrays
+      imageArray.push({
+        src: imageURL
+      })
+
+      // console.log("imageArray = (below)");
+      // console.log(imageArray);
+
     // else add the class 'hidden'
     } else {
-      console.log("!(option === 'all' || element.hasClass(option))");
+      // console.log("!(option === 'all' || element.hasClass(option))");
       $(element).addClass("hidden");
     }
+
+    $('#portfolio').magnificPopup({
+      type: 'image',
+      tLoading: 'Loading image #%curr%...',
+      // mainClass: 'mfp-img-mobile',
+      gallery: {
+        enabled: true,
+        navigateByImgClick: true,
+        preload: [0, 1]
+      },
+      items: imageArray
+    });
   });
 
   // get all elements with class portfolio-box-container
   var navItems = $('.sub-navbar').find('.nav-item');
-  console.log("navItems = " + navItems);
+  // console.log("navItems = " + navItems);
   var currentIndex = 0;
   // for each portfolio-box-container element...
   Array.prototype.forEach.call(navItems, function(element) {
-    console.log("element = " + element);
-    console.log("currentIndex = " + currentIndex);
+    // console.log("element = (below)");
+    // console.log(element);
+    // console.log("currentIndex = " + currentIndex);
     // if index selected is the current index, then add the class 'active'
     if (index === currentIndex) {
-      console.log("index === currentIndex");
+      // console.log("index === currentIndex");
       $(element).addClass("active");
     // else remove the class 'active'
     } else {
-      console.log("index !== currentIndex");
+      // console.log("index !== currentIndex");
       $(element).removeClass("active");
     }
     // add 1 to the currentIndex
