@@ -1,7 +1,16 @@
 (function($) {
   "use strict"; // Start of use strict
 
-  filterGallery('24x24', 0)
+  var pageURL = $(location).attr("href");
+  // alert("pageURL = " + pageURL);
+
+  if (pageURL.indexOf('galleryViewBySize') !== -1) {
+    console.log("pageURL.indexOf('galleryViewBySize') !== -1");
+    filterGallery('24x24', 0)
+  } else {
+    console.log("pageURL.indexOf('galleryViewBySize') === -1");
+    filterGallery('all', 0)
+  }
 
   // Smooth scrolling using jQuery easing
   $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
