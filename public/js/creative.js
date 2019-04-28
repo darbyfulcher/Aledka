@@ -74,10 +74,10 @@
     //     type: 'inline'
     //   }
     // ]
-    // delegate: 'a',
+    delegate: 'a:visible',
     type: 'image',
     tLoading: 'Loading image #%curr%...',
-    // mainClass: 'mfp-img-mobile',
+    mainClass: 'mfp-img-mobile',
     gallery: {
       enabled: true,
       navigateByImgClick: true,
@@ -86,24 +86,32 @@
     // items:[{
     //     src: 'img/portfolio/fullsize/24x24/Reflections2201824X24.jpg'
     // }],
-    items: imageArray
+    // items: imageArray
     // image: {
     //   titleSrc: 'title',  // this tells the script which attribute has your caption
     //   tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
     // }
   });
-
 })(jQuery); // End of use strict
 
-var imageArray = []
+// var imageArray = []
+
+// function openImage(index) {
+//   console.log("openImage index = " + index);
+//   // $.magnificPopup.open({
+//   // // $('#portfolio').magnificPopup.open({
+//   //   items: imageArray
+//   // }, index);
+// }
 
 function filterGallery(option, index) {
-  // reset the imageArray
-  imageArray = []
+  // // reset the imageArray
+  // imageArray = []
   // get all elements with class portfolio-box-container
   var portfolioBoxContainers = document.getElementsByClassName("portfolio-box-container");
   // console.log("portfolioBoxContainers = " + portfolioBoxContainers);
   // for each portfolio-box-container element...
+  var index = 0
   Array.prototype.forEach.call(portfolioBoxContainers, function(element) {
     // console.log("element = (below)");
     // console.log(element);
@@ -121,13 +129,47 @@ function filterGallery(option, index) {
       // console.log("imageURL = (below)");
       // console.log(imageURL);
 
-      // add the image url to the imageArrays
-      imageArray.push({
-        src: imageURL
-      })
+      // // add the image url to the imageArrays
+      // imageArray.push({
+      //   src: imageURL
+      // })
+
+      // openImage(index)
+
+      // $('#portfolio').magnificPopup({
+      //   type: 'image',
+      //   tLoading: 'Loading image #%curr%...',
+      //   // mainClass: 'mfp-img-mobile',
+      //   gallery: {
+      //     enabled: true,
+      //     navigateByImgClick: true,
+      //     preload: [0, 1]
+      //   },
+      //   items: imageArray
+      // }, index);
+
+      // $.magnificPopup.open({
+      //    items: imageArray
+      //  }, index);
+
+     // $('#portfolio').magnificPopup({
+     //   delegate: 'a',
+     //   type: 'image',
+     //   tLoading: 'Loading image #%curr%...',
+     //   mainClass: 'mfp-img-mobile',
+     //   gallery: {
+     //     enabled: true,
+     //     navigateByImgClick: true,
+     //     preload: [0, 1]
+     //   },
+     //   // items: imageArray
+     // });
 
       // console.log("imageArray = (below)");
       // console.log(imageArray);
+
+      // increment the index
+      index++
 
     // else add the class 'hidden'
     } else {
@@ -135,17 +177,39 @@ function filterGallery(option, index) {
       $(element).addClass("hidden");
     }
 
-    $('#portfolio').magnificPopup({
-      type: 'image',
-      tLoading: 'Loading image #%curr%...',
-      // mainClass: 'mfp-img-mobile',
-      gallery: {
-        enabled: true,
-        navigateByImgClick: true,
-        preload: [0, 1]
-      },
-      items: imageArray
-    });
+    // $('#portfolio').magnificPopup({
+    //   type: 'image',
+    //   tLoading: 'Loading image #%curr%...',
+    //   // mainClass: 'mfp-img-mobile',
+    //   gallery: {
+    //     enabled: true,
+    //     navigateByImgClick: true,
+    //     preload: [0, 1]
+    //   },
+    //   items: imageArray
+    // }, index);
+
+    // .open({
+    // // $('#portfolio').magnificPopup.open({
+    //   items: imageArray
+    // }, index);
+
+    // // get array of image elements within portfolio
+    // console.log("$('#portfolio').children('img') = (below)");
+    // console.log($('#portfolio'));
+    // console.log($('#portfolio').children('img'));
+    // console.log($('#portfolio').children('img'));
+    // console.log(document.getElementsByClassName("img-fluid"));
+    // document.getElementsByClassName("img-fluid").each(function( index ) {
+    //   console.log( index + ": " + $( this ).text() );
+    //   openImage(index)
+    // });
+    //
+    // for(var i = 0; i < slides.length; i++) {
+    //    Distribute(slides.item(i));
+    // }
+      // set onclick listener for each element
+
   });
 
   // get all elements with class portfolio-box-container
