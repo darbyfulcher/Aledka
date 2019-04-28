@@ -5,10 +5,10 @@
   // alert("pageURL = " + pageURL);
 
   if (pageURL.indexOf('galleryViewBySize') !== -1) {
-    console.log("pageURL.indexOf('galleryViewBySize') !== -1");
+    // console.log("pageURL.indexOf('galleryViewBySize') !== -1");
     filterGallery('24x24', 0)
   } else {
-    console.log("pageURL.indexOf('galleryViewBySize') === -1");
+    // console.log("pageURL.indexOf('galleryViewBySize') === -1");
     filterGallery('all', 0)
   }
 
@@ -111,7 +111,7 @@ function filterGallery(option, index) {
   var portfolioBoxContainers = document.getElementsByClassName("portfolio-box-container");
   // console.log("portfolioBoxContainers = " + portfolioBoxContainers);
   // for each portfolio-box-container element...
-  var index = 0
+  // var index = 0
   Array.prototype.forEach.call(portfolioBoxContainers, function(element) {
     // console.log("element = (below)");
     // console.log(element);
@@ -169,7 +169,7 @@ function filterGallery(option, index) {
       // console.log(imageArray);
 
       // increment the index
-      index++
+      // index++
 
     // else add the class 'hidden'
     } else {
