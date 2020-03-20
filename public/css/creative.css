@@ -10929,3 +10929,7 @@ header.masthead h1 {
 .galleryTitle {
   margin-top: 20px;
 }
+
+#contact a {
+  font-size: 30px;
+}
